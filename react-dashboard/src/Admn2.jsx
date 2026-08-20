@@ -474,17 +474,17 @@ function RadarMap({ height = "100%", onSelect }) {
 /* ------------------------------------------------------------------ */
 /*  LOGIN SCREEN                                                        */
 /* ------------------------------------------------------------------ */
-const ROLE_LABELS = { dispatcher: "Emergency Dispatcher", responder: "Responder", analyst: "Analyst" };
+const ROLE_LABELS = { ADMIN: "Emergency Dispatcher", USER: "Tourist / Hiker" };
  
 function LoginScreen({ onLogin }) {
-  const [role, setRole] = useState("dispatcher");
+  const [role, setRole] = useState("ADMIN ");
   const [id, setId] = useState("");
   const [pw, setPw] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
  
   const submit = () => {
-    if (!id.trim() || !pw.trim()) { setError("Enter an admin ID and password to continue."); return; }
+    if (!id.trim() || !pw.trim()) { setError("Enter an admin/user ID and password to continue."); return; }
     setError("");
     setLoading(true);
     setTimeout(() => { setLoading(false); onLogin({ id: id.trim(), role }); }, 900);
@@ -513,7 +513,7 @@ function LoginScreen({ onLogin }) {
         </div>
  
         <div className="login-field" style={{ animationDelay: "60ms" }}>
-          <label className="login-label">Admin ID</label>
+          <label className="login-label">Admin ID/USER ID</label>
           <div className="login-input-wrap">
             <UserCheck size={14} color="var(--text-faint)" />
             <input value={id} onChange={(e) => setId(e.target.value)} placeholder="e.g. ADM-0231"

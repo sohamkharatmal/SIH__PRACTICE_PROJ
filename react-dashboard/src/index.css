@@ -4,7 +4,7 @@
   --bg: #fff;
   --border: #e5e4e7;
   --code-bg: #f4f3ec;
-  --accent: #aa3bff;
+  --accent: #f9f2ff;
   --accent-bg: rgba(170, 59, 255, 0.1);
   --accent-border: rgba(170, 59, 255, 0.5);
   --social-bg: rgba(244, 243, 236, 0.5);
@@ -55,7 +55,7 @@ body {
 }
 
 #root {
-  width: 1126px;
+  width: 1560px;
   max-width: 100%;
   margin: 0 auto;
   text-align: center;
@@ -108,4 +108,74 @@ code {
   line-height: 135%;
   padding: 4px 8px;
   background: var(--code-bg);
+}
+
+/* Tablets */
+@media (max-width: 1024px) {
+  #root {
+    width: 100%;
+    border-inline: none;
+  }
+
+  h1 {
+    font-size: 38px;
+    margin: 24px 16px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+}
+
+/* Phones */
+@media (max-width: 768px) {
+  :root {
+    font-size: 16px;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  #root {
+    width: 100%;
+    min-width: 0;
+    border: none;
+  }
+
+  h1 {
+    font-size: 32px;
+    line-height: 1.15;
+    letter-spacing: -0.8px;
+    margin: 20px 12px;
+  }
+
+  h2 {
+    font-size: 20px;
+    line-height: 1.25;
+  }
+
+  p {
+    font-size: 15px;
+  }
+
+  code {
+    font-size: 13px;
+    padding: 3px 6px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 14px;
+  }
 }
