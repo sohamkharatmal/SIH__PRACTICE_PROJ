@@ -117,36 +117,3 @@ WARNING
 HIGH RISK
 CRITICAL
 ```
-
-<div align="center">
-
-                    TOURIST
-                      │
-                      ▼
-              ┌─────────────────┐
-              │  Web / Mobile   │
-              │    Interface    │
-              └────────┬────────┘
-                       │
-                 HTTP / REST API
-                       │
-                       ▼
-              ┌─────────────────┐
-              │    BACKEND      │
-              │ Node.js/FastAPI │
-              └────────┬────────┘
-                       │
-          ┌────────────┼─────────────┐
-          │            │             │
-          ▼            ▼             ▼
-     PostgreSQL      AI/ML       Geo-Fencing
-                     Module        Module
-          │            │             │
-          └────────────┼─────────────┘
-                       │
-                       ▼
-              ┌─────────────────┐
-              │    AUTHORITY    │
-              │    DASHBOARD    │
-              └─────────────────┘ 
-</div>
