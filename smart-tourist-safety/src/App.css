@@ -1,0 +1,2431 @@
+/* =========================================================
+   SMART TOURIST SAFETY SYSTEM
+   COMPLETE FRONTEND CSS
+========================================================= */
+
+
+/* =========================================================
+   COLOR PALETTE
+========================================================= */
+
+:root {
+
+  /* Main palette from your reference */
+
+  --slate:
+    rgba(44, 70, 83, 1);
+
+  --slate-card:
+    rgba(60, 77, 85, 1);
+
+  --mustard:
+    rgba(221, 165, 85, 1);
+
+  --gold:
+    rgba(194, 153, 75, 1);
+
+  --dark-gray:
+    rgba(56, 70, 78, 1);
+
+  --white:
+    rgba(255, 255, 255, 1);
+
+  --light-gray:
+    rgba(204, 204, 204, 0.8);
+
+  --mint-dark:
+    rgba(34, 73, 60, 1);
+
+
+  /* Existing complementary colors */
+
+  --maroon:
+    rgba(91, 38, 48, 1);
+
+  --burgundy:
+    rgba(126, 48, 62, 1);
+
+  --cream:
+    rgba(248, 242, 228, 1);
+
+  --cream-light:
+    rgba(255, 250, 240, 1);
+
+  --green:
+    rgba(82, 133, 91, 1);
+
+  --royal:
+    rgba(64, 87, 166, 1);
+
+  --pink:
+    rgba(216, 117, 130, 1);
+
+  --coral:
+    rgba(229, 111, 94, 1);
+
+
+  /* Text */
+
+  --text-dark:
+    rgba(37, 48, 71, 1);
+
+  --text-muted:
+    rgba(112, 120, 135, 1);
+}
+
+
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+
+  margin: 0;
+  padding: 0;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  background:
+    var(--cream);
+
+  color:
+    var(--text-dark);
+}
+
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+
+button {
+  cursor: pointer;
+}
+
+
+a {
+  text-decoration: none;
+}
+
+
+::selection {
+
+  background:
+    var(--mustard);
+
+  color:
+    var(--slate);
+}
+
+
+/* =========================================================
+   MAIN APP
+========================================================= */
+
+.app {
+
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  background:
+    var(--cream);
+
+  color:
+    var(--text-dark);
+}
+
+
+/* =========================================================
+   NAVBAR
+   DARK SLATE
+========================================================= */
+
+.navbar {
+
+  height: 82px;
+
+  padding:
+    0 7%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  position: relative;
+
+  z-index: 100;
+
+  background:
+    var(--slate);
+
+  border-bottom:
+    1px solid
+    rgba(221, 165, 85, 0.35);
+
+  box-shadow:
+    0 5px 20px
+    rgba(20, 30, 35, 0.25);
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+
+.logo-icon {
+
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background:
+    var(--mint-dark);
+
+  color:
+    var(--white);
+
+  font-size: 21px;
+
+  border:
+    1px solid
+    rgba(221, 165, 85, 0.55);
+
+  box-shadow:
+    4px 4px 0
+    rgba(221, 165, 85, 0.85);
+
+  transition:
+    0.25s ease;
+}
+
+
+.logo-icon:hover {
+
+  transform:
+    translateY(-2px)
+    rotate(-3deg);
+
+  background:
+    var(--mustard);
+
+  color:
+    var(--slate);
+
+  box-shadow:
+    5px 5px 0
+    var(--mint-dark);
+}
+
+
+.logo h2 {
+
+  margin: 0;
+
+  color:
+    var(--white);
+
+  font-size: 19px;
+
+  font-weight: 700;
+
+  letter-spacing:
+    -0.3px;
+}
+
+
+.logo span {
+
+  display: block;
+
+  margin-top: 2px;
+
+  color:
+    var(--light-gray);
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  letter-spacing:
+    1.2px;
+
+  text-transform:
+    uppercase;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.nav-links {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 34px;
+}
+
+
+.nav-links a {
+
+  position: relative;
+
+  color:
+    var(--light-gray);
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  font-weight: 550;
+
+  transition:
+    color 0.25s ease;
+}
+
+
+.nav-links a::after {
+
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+
+  bottom: -9px;
+
+  width: 0;
+
+  height: 2px;
+
+  transform:
+    translateX(-50%);
+
+  background:
+    var(--mustard);
+
+  transition:
+    width 0.25s ease;
+}
+
+
+.nav-links a:hover {
+
+  color:
+    var(--white);
+}
+
+
+.nav-links a:hover::after {
+
+  width: 100%;
+}
+
+
+/* =========================================================
+   LOGIN BUTTON
+========================================================= */
+
+.login-button {
+
+  padding:
+    10px 21px;
+
+  border:
+    1.5px solid
+    var(--mustard);
+
+  border-radius: 8px;
+
+  background:
+    var(--mustard);
+
+  color:
+    var(--slate);
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    0.25s ease;
+}
+
+
+.login-button:hover {
+
+  background:
+    var(--gold);
+
+  border-color:
+    var(--gold);
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 6px 18px
+    rgba(221, 165, 85, 0.25);
+}
+
+
+/* =========================================================
+   HERO
+   MAROON
+========================================================= */
+
+.hero {
+
+  min-height: 690px;
+
+  padding:
+    75px 9%
+    100px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 70px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  background:
+
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(126, 48, 62, 0.9),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 12% 85%,
+      rgba(34, 73, 60, 0.35),
+      transparent 28%
+    ),
+
+    linear-gradient(
+      135deg,
+      var(--maroon),
+      rgba(69, 29, 37, 1)
+    );
+}
+
+
+/* =========================================================
+   HERO DECORATIVE CIRCLE
+========================================================= */
+
+.hero::before {
+
+  content: "";
+
+  position: absolute;
+
+  width: 650px;
+  height: 650px;
+
+  right: -330px;
+  top: -300px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.10);
+
+  border-radius: 50%;
+
+  animation:
+    heroRotate 35s linear infinite;
+
+  pointer-events: none;
+}
+
+
+.hero::after {
+
+  content: "";
+
+  position: absolute;
+
+  width: 320px;
+  height: 320px;
+
+  left: -180px;
+  bottom: -180px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(216, 117, 130, 0.10);
+
+  filter:
+    blur(15px);
+
+  pointer-events: none;
+}
+
+
+@keyframes heroRotate {
+
+  from {
+    transform:
+      rotate(0deg);
+  }
+
+  to {
+    transform:
+      rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.hero-content {
+
+  max-width: 650px;
+
+  position: relative;
+
+  z-index: 5;
+}
+
+
+/* =========================================================
+   BADGE
+========================================================= */
+
+.badge {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding:
+    9px 15px;
+
+  border-radius:
+    50px;
+
+  background:
+    rgba(34, 73, 60, 0.55);
+
+  border:
+    1px solid
+    rgba(82, 133, 91, 0.65);
+
+  color:
+    var(--white);
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing:
+    0.4px;
+}
+
+
+.badge::before {
+
+  content: "";
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background:
+    var(--green);
+
+  box-shadow:
+    0 0 0 4px
+    rgba(82, 133, 91, 0.15);
+
+  animation:
+    badgePulse 2s ease-in-out infinite;
+}
+
+
+@keyframes badgePulse {
+
+  0%,
+  100% {
+    transform:
+      scale(1);
+  }
+
+  50% {
+    transform:
+      scale(1.35);
+  }
+}
+
+
+/* =========================================================
+   HERO HEADING
+========================================================= */
+
+.hero h1 {
+
+  margin:
+    25px 0 0;
+
+  color:
+    var(--white);
+
+  font-size:
+    clamp(52px, 7vw, 88px);
+
+  line-height:
+    0.96;
+
+  letter-spacing:
+    -5px;
+
+  font-weight:
+    800;
+}
+
+
+.hero h1 span {
+
+  color:
+    var(--mustard);
+
+  position:
+    relative;
+
+  z-index:
+    1;
+}
+
+
+.hero h1 span::after {
+
+  content: "";
+
+  position:
+    absolute;
+
+  left:
+    0;
+
+  right:
+    0;
+
+  bottom:
+    2px;
+
+  height:
+    7px;
+
+  background:
+    rgba(194, 153, 75, 0.55);
+
+  z-index:
+    -1;
+
+  transform:
+    rotate(-1deg);
+}
+
+
+/* =========================================================
+   HERO DESCRIPTION
+========================================================= */
+
+.hero-content > p {
+
+  max-width:
+    590px;
+
+  margin-top:
+    30px;
+
+  color:
+    var(--light-gray);
+
+  font-size:
+    17px;
+
+  line-height:
+    1.7;
+}
+
+
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
+
+.hero-buttons {
+
+  display:
+    flex;
+
+  gap:
+    16px;
+
+  margin-top:
+    35px;
+}
+
+
+.primary-button,
+.secondary-button {
+
+  padding:
+    15px 27px;
+
+  border-radius:
+    8px;
+
+  font-size:
+    14px;
+
+  font-weight:
+    600;
+
+  cursor:
+    pointer;
+
+  transition:
+    0.25s ease;
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON
+========================================================= */
+
+.primary-button {
+
+  border:
+    none;
+
+  background:
+    var(--mustard);
+
+  color:
+    var(--slate);
+
+  box-shadow:
+    5px 5px 0
+    var(--mint-dark);
+}
+
+
+.primary-button:hover {
+
+  background:
+    var(--gold);
+
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    5px 8px 0
+    var(--mint-dark);
+}
+
+
+/* =========================================================
+   SECONDARY BUTTON
+========================================================= */
+
+.secondary-button {
+
+  background:
+    var(--dark-gray);
+
+  border:
+    1px solid
+    rgba(204, 204, 204, 0.35);
+
+  color:
+    var(--white);
+}
+
+
+.secondary-button:hover {
+
+  background:
+    var(--slate-card);
+
+  border-color:
+    rgba(221, 165, 85, 0.7);
+
+  transform:
+    translateY(-2px);
+}
+
+
+/* =========================================================
+   HERO VISUAL
+========================================================= */
+
+.hero-visual {
+
+  width:
+    470px;
+
+  height:
+    480px;
+
+  flex-shrink:
+    0;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  position:
+    relative;
+
+  z-index:
+    5;
+}
+
+
+/* =========================================================
+   SAFETY CARD
+========================================================= */
+
+.safety-card {
+
+  width:
+    310px;
+
+  height:
+    365px;
+
+  padding:
+    20px;
+
+  position:
+    relative;
+
+  z-index:
+    10;
+
+  border-radius:
+    22px;
+
+  background:
+    var(--slate-card);
+
+  color:
+    var(--white);
+
+  border:
+    1px solid
+    rgba(204, 204, 204, 0.12);
+
+  box-shadow:
+
+    15px 15px 0
+    rgba(221, 165, 85, 0.9),
+
+    0 30px 70px
+    rgba(0, 0, 0, 0.35);
+
+  animation:
+    dashboardFloat 5s ease-in-out infinite;
+}
+
+
+@keyframes dashboardFloat {
+
+  0%,
+  100% {
+
+    transform:
+      translateY(0)
+      rotate(-1deg);
+  }
+
+  50% {
+
+    transform:
+      translateY(-12px)
+      rotate(1deg);
+  }
+}
+
+
+/* =========================================================
+   CARD TOP
+========================================================= */
+
+.card-top {
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  color:
+    var(--light-gray);
+
+  font-size:
+    10px;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    0.7px;
+
+  text-transform:
+    uppercase;
+}
+
+
+.card-top span:first-child {
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    6px;
+
+  color:
+    var(--mustard);
+}
+
+
+.card-top span:first-child::before {
+
+  content: "";
+
+  width:
+    7px;
+
+  height:
+    7px;
+
+  border-radius:
+    50%;
+
+  background:
+    var(--green);
+}
+
+
+/* =========================================================
+   SAFETY VISUAL
+========================================================= */
+
+.shield {
+
+  width:
+    100%;
+
+  height:
+    130px;
+
+  margin:
+    18px 0 15px;
+
+  position:
+    relative;
+
+  overflow:
+    hidden;
+
+  border-radius:
+    15px;
+
+  background:
+
+    linear-gradient(
+      135deg,
+      rgba(34, 73, 60, 1),
+      rgba(47, 107, 79, 1)
+    );
+
+  box-shadow:
+    inset 0 0 0 1px
+    rgba(255, 255, 255, 0.08);
+
+  font-size:
+    0;
+}
+
+
+/* =========================================================
+   MAP ROAD
+========================================================= */
+
+.shield::before {
+
+  content: "";
+
+  position:
+    absolute;
+
+  width:
+    140%;
+
+  height:
+    45px;
+
+  left:
+    -20%;
+
+  top:
+    44px;
+
+  border-top:
+    4px solid
+    rgba(255, 255, 255, 0.8);
+
+  border-bottom:
+    3px solid
+    rgba(255, 255, 255, 0.35);
+
+  transform:
+    rotate(-13deg);
+}
+
+
+/* =========================================================
+   MAP ROUTE
+========================================================= */
+
+.shield::after {
+
+  content: "";
+
+  position:
+    absolute;
+
+  width:
+    170px;
+
+  height:
+    60px;
+
+  left:
+    65px;
+
+  top:
+    32px;
+
+  border:
+    4px solid
+    var(--mustard);
+
+  border-left-color:
+    transparent;
+
+  border-bottom-color:
+    transparent;
+
+  border-radius:
+    50%;
+
+  transform:
+    rotate(15deg);
+}
+
+
+/* =========================================================
+   SAFETY CARD TEXT
+========================================================= */
+
+.safety-card h3 {
+
+  margin:
+    7px 0 4px;
+
+  color:
+    var(--white);
+
+  font-size:
+    20px;
+
+  font-weight:
+    750;
+}
+
+
+.safety-card p {
+
+  margin:
+    0;
+
+  color:
+    var(--light-gray);
+
+  font-size:
+    12px;
+
+  line-height:
+    1.5;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.status {
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  margin-top:
+    18px;
+
+  padding:
+    10px 12px;
+
+  border-radius:
+    10px;
+
+  background:
+    var(--mint-dark);
+
+  color:
+    var(--white);
+
+  font-size:
+    11px;
+
+  font-weight:
+    700;
+}
+
+
+.status span {
+
+  width:
+    8px;
+
+  height:
+    8px;
+
+  border-radius:
+    50%;
+
+  background:
+    var(--green);
+
+  box-shadow:
+    0 0 0 4px
+    rgba(82, 133, 91, 0.15);
+}
+
+
+/* =========================================================
+   CARD BOTTOM
+========================================================= */
+
+.safety-card::after {
+
+  content:
+    "SAFE AREA     94%     •     GPS ACTIVE";
+
+  position:
+    absolute;
+
+  left:
+    20px;
+
+  right:
+    20px;
+
+  bottom:
+    18px;
+
+  padding:
+    9px;
+
+  border-radius:
+    8px;
+
+  background:
+    var(--dark-gray);
+
+  color:
+    var(--mustard);
+
+  font-size:
+    8px;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    0.6px;
+
+  text-align:
+    center;
+}
+
+
+/* =========================================================
+   ORBITS
+========================================================= */
+
+.orbit {
+
+  position:
+    absolute;
+
+  border:
+    1px dashed
+    rgba(221, 165, 85, 0.25);
+
+  border-radius:
+    50%;
+
+  pointer-events:
+    none;
+}
+
+
+.orbit-one {
+
+  width:
+    430px;
+
+  height:
+    430px;
+
+  animation:
+    rotateOrbit 35s linear infinite;
+}
+
+
+.orbit-two {
+
+  width:
+    350px;
+
+  height:
+    350px;
+
+  border-color:
+    rgba(34, 73, 60, 0.45);
+
+  animation:
+    rotateOrbitReverse 25s linear infinite;
+}
+
+
+@keyframes rotateOrbit {
+
+  from {
+    transform:
+      rotate(0deg);
+  }
+
+  to {
+    transform:
+      rotate(360deg);
+  }
+}
+
+
+@keyframes rotateOrbitReverse {
+
+  from {
+    transform:
+      rotate(360deg);
+  }
+
+  to {
+    transform:
+      rotate(0deg);
+  }
+}
+
+
+/* =========================================================
+   GLOW
+========================================================= */
+
+.glow {
+
+  position:
+    absolute;
+
+  width:
+    170px;
+
+  height:
+    170px;
+
+  border-radius:
+    50%;
+
+  filter:
+    blur(65px);
+
+  opacity:
+    0.18;
+
+  pointer-events:
+    none;
+}
+
+
+.glow-one {
+
+  background:
+    var(--mustard);
+
+  top:
+    20px;
+
+  left:
+    20px;
+}
+
+
+.glow-two {
+
+  background:
+    var(--mint-dark);
+
+  right:
+    10px;
+
+  bottom:
+    10px;
+}
+
+
+/* =========================================================
+   FLOATING ICONS
+========================================================= */
+
+.floating-icon {
+
+  width:
+    62px;
+
+  height:
+    62px;
+
+  position:
+    absolute;
+
+  z-index:
+    30;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  border-radius:
+    15px;
+
+  background:
+    var(--slate-card);
+
+  border:
+    1px solid
+    rgba(221, 165, 85, 0.5);
+
+  color:
+    var(--white);
+
+  font-size:
+    24px;
+
+  box-shadow:
+    5px 5px 0
+    var(--mint-dark);
+
+  backdrop-filter:
+    blur(10px);
+
+  transition:
+    0.25s ease;
+}
+
+
+.floating-icon:hover {
+
+  transform:
+    translateY(-5px)
+    rotate(-3deg);
+
+  box-shadow:
+    6px 6px 0
+    var(--mustard);
+}
+
+
+/* =========================================================
+   LOCATION ICON
+========================================================= */
+
+.location {
+
+  top:
+    22px;
+
+  right:
+    20px;
+
+  color:
+    var(--mustard);
+
+  animation:
+    floatLocation 3s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   MAP ICON
+========================================================= */
+
+.map {
+
+  left:
+    5px;
+
+  bottom:
+    35px;
+
+  color:
+    var(--green);
+
+  animation:
+    floatMap 4s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   ID CARD ICON
+========================================================= */
+
+.id-card {
+
+  right:
+    -18px;
+
+  top:
+    185px;
+
+  color:
+    var(--gold);
+
+  animation:
+    floatID 3.5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   FLOAT ANIMATIONS
+========================================================= */
+
+@keyframes floatLocation {
+
+  0%,
+  100% {
+
+    transform:
+      translateY(0)
+      rotate(3deg);
+  }
+
+  50% {
+
+    transform:
+      translateY(-12px)
+      rotate(-3deg);
+  }
+}
+
+
+@keyframes floatMap {
+
+  0%,
+  100% {
+
+    transform:
+      translateY(0)
+      rotate(-3deg);
+  }
+
+  50% {
+
+    transform:
+      translateY(13px)
+      rotate(3deg);
+  }
+}
+
+
+@keyframes floatID {
+
+  0%,
+  100% {
+
+    transform:
+      translateY(0)
+      rotate(4deg);
+  }
+
+  50% {
+
+    transform:
+      translateY(-10px)
+      rotate(-4deg);
+  }
+}
+
+
+/* =========================================================
+   SOS SECTION
+========================================================= */
+
+.sos-section {
+
+  min-height:
+    360px;
+
+  padding:
+    70px 20px
+    80px;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  position:
+    relative;
+
+  background:
+    var(--cream);
+
+  color:
+    var(--slate);
+}
+
+
+/* =========================================================
+   SOS LABEL
+========================================================= */
+
+.sos-section::before {
+
+  content:
+    "EMERGENCY RESPONSE";
+
+  margin-bottom:
+    25px;
+
+  color:
+    rgba(44, 70, 83, 0.45);
+
+  font-size:
+    10px;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    4px;
+}
+
+
+/* =========================================================
+   SOS WRAPPER
+========================================================= */
+
+.sos-wrapper {
+
+  width:
+    175px;
+
+  height:
+    175px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  position:
+    relative;
+}
+
+
+/* =========================================================
+   SOS BUTTON
+========================================================= */
+
+.sos-button {
+
+  width:
+    110px;
+
+  height:
+    110px;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  position:
+    relative;
+
+  z-index:
+    10;
+
+  border:
+    5px solid
+    var(--cream);
+
+  border-radius:
+    50%;
+
+  background:
+    var(--coral);
+
+  color:
+    var(--white);
+
+  cursor:
+    pointer;
+
+  box-shadow:
+    8px 8px 0
+    var(--slate);
+
+  animation:
+    sosHeartbeat 2.2s ease-in-out infinite;
+
+  transition:
+    0.25s ease;
+}
+
+
+.sos-button:hover {
+
+  background:
+    var(--pink);
+
+  transform:
+    scale(1.07);
+}
+
+
+.sos-icon {
+
+  font-size:
+    25px;
+}
+
+
+.sos-text {
+
+  font-size:
+    18px;
+
+  font-weight:
+    800;
+}
+
+
+.sos-subtext {
+
+  font-size:
+    9px;
+
+  opacity:
+    0.8;
+}
+
+
+@keyframes sosHeartbeat {
+
+  0%,
+  100% {
+
+    transform:
+      scale(1);
+  }
+
+  50% {
+
+    transform:
+      scale(1.05);
+  }
+}
+
+
+/* =========================================================
+   SOS RINGS
+========================================================= */
+
+.sos-ring {
+
+  width:
+    110px;
+
+  height:
+    110px;
+
+  position:
+    absolute;
+
+  border:
+    2px solid
+    rgba(229, 111, 94, 0.42);
+
+  border-radius:
+    50%;
+
+  animation:
+    sosRipple 2.5s infinite;
+}
+
+
+.ring-two {
+
+  animation-delay:
+    0.8s;
+}
+
+
+.ring-three {
+
+  animation-delay:
+    1.6s;
+}
+
+
+@keyframes sosRipple {
+
+  0% {
+
+    transform:
+      scale(1);
+
+    opacity:
+      0.7;
+  }
+
+  100% {
+
+    transform:
+      scale(1.8);
+
+    opacity:
+      0;
+  }
+}
+
+
+/* =========================================================
+   SOS DESCRIPTION
+========================================================= */
+
+.sos-description {
+
+  margin-top:
+    22px;
+
+  color:
+    var(--text-muted);
+
+  font-size:
+    13px;
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.features-preview {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap:
+    20px;
+
+  padding:
+    80px 8%
+    100px;
+
+  position:
+    relative;
+
+  background:
+    var(--cream);
+}
+
+
+/* =========================================================
+   FEATURES LABEL
+========================================================= */
+
+.features-preview::before {
+
+  content:
+    "SMART TOURIST SAFETY";
+
+  position:
+    absolute;
+
+  top:
+    30px;
+
+  left:
+    8%;
+
+  color:
+    rgba(44, 70, 83, 0.35);
+
+  font-size:
+    10px;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    4px;
+}
+
+
+/* =========================================================
+   FEATURE CARD
+========================================================= */
+
+.feature {
+
+  min-height:
+    225px;
+
+  padding:
+    28px;
+
+  position:
+    relative;
+
+  overflow:
+    hidden;
+
+  border-radius:
+    18px;
+
+  background:
+    var(--cream-light);
+
+  border:
+    1px solid
+    rgba(44, 70, 83, 0.12);
+
+  box-shadow:
+    0 10px 25px
+    rgba(44, 70, 83, 0.08);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* =========================================================
+   FEATURE TOP COLORS
+========================================================= */
+
+.feature:nth-child(1) {
+
+  border-top:
+    5px solid
+    var(--mint-dark);
+}
+
+
+.feature:nth-child(2) {
+
+  border-top:
+    5px solid
+    var(--royal);
+}
+
+
+.feature:nth-child(3) {
+
+  border-top:
+    5px solid
+    var(--mustard);
+}
+
+
+.feature:nth-child(4) {
+
+  border-top:
+    5px solid
+    var(--pink);
+}
+
+
+/* =========================================================
+   FEATURE DECORATION
+========================================================= */
+
+.feature::before {
+
+  content:
+    "";
+
+  width:
+    90px;
+
+  height:
+    90px;
+
+  position:
+    absolute;
+
+  right:
+    -35px;
+
+  top:
+    -35px;
+
+  border-radius:
+    50%;
+}
+
+
+.feature:nth-child(1)::before {
+
+  background:
+    rgba(34, 73, 60, 0.12);
+}
+
+
+.feature:nth-child(2)::before {
+
+  background:
+    rgba(64, 87, 166, 0.12);
+}
+
+
+.feature:nth-child(3)::before {
+
+  background:
+    rgba(221, 165, 85, 0.15);
+}
+
+
+.feature:nth-child(4)::before {
+
+  background:
+    rgba(216, 117, 130, 0.13);
+}
+
+
+/* =========================================================
+   FEATURE HOVER
+========================================================= */
+
+.feature:hover {
+
+  transform:
+    translateY(-9px);
+
+  box-shadow:
+    0 20px 35px
+    rgba(44, 70, 83, 0.13);
+}
+
+
+/* =========================================================
+   FEATURE ICON
+========================================================= */
+
+.feature > span {
+
+  width:
+    50px;
+
+  height:
+    50px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  margin-bottom:
+    18px;
+
+  position:
+    relative;
+
+  z-index:
+    2;
+
+  border-radius:
+    13px;
+
+  color:
+    var(--white);
+
+  font-size:
+    23px;
+}
+
+
+.feature:nth-child(1) > span {
+
+  background:
+    var(--mint-dark);
+}
+
+
+.feature:nth-child(2) > span {
+
+  background:
+    var(--royal);
+}
+
+
+.feature:nth-child(3) > span {
+
+  background:
+    var(--mustard);
+
+  color:
+    var(--slate);
+}
+
+
+.feature:nth-child(4) > span {
+
+  background:
+    var(--pink);
+}
+
+
+/* =========================================================
+   FEATURE TEXT
+========================================================= */
+
+.feature h3 {
+
+  margin:
+    0 0 9px;
+
+  color:
+    var(--slate);
+
+  font-size:
+    18px;
+
+  font-weight:
+    750;
+}
+
+
+.feature p {
+
+  margin:
+    0;
+
+  color:
+    var(--text-muted);
+
+  font-size:
+    13px;
+
+  line-height:
+    1.65;
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .hero {
+
+    padding-left:
+      6%;
+
+    padding-right:
+      6%;
+  }
+
+
+  .hero-visual {
+
+    transform:
+      scale(0.9);
+  }
+
+
+  .features-preview {
+
+    padding-left:
+      6%;
+
+    padding-right:
+      6%;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE — 900PX
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .nav-links {
+
+    display:
+      none;
+  }
+
+
+  .hero {
+
+    flex-direction:
+      column;
+
+    text-align:
+      center;
+
+    padding-top:
+      65px;
+  }
+
+
+  .hero-content > p {
+
+    margin-left:
+      auto;
+
+    margin-right:
+      auto;
+  }
+
+
+  .hero-buttons {
+
+    justify-content:
+      center;
+  }
+
+
+  .hero-visual {
+
+    transform:
+      scale(0.9);
+
+    margin-top:
+      20px;
+  }
+
+
+  .features-preview {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE — 650PX
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .navbar {
+
+    padding:
+      0 5%;
+  }
+
+
+  .hero {
+
+    padding:
+      60px 5%
+      80px;
+  }
+
+
+  .hero h1 {
+
+    font-size:
+      50px;
+
+    letter-spacing:
+      -3px;
+  }
+
+
+  .hero-content > p {
+
+    font-size:
+      15px;
+  }
+
+
+  .hero-visual {
+
+    transform:
+      scale(0.78);
+
+    margin-top:
+      -20px;
+
+    margin-bottom:
+      -50px;
+  }
+
+
+  .features-preview {
+
+    padding:
+      60px 5%
+      80px;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE — 550PX
+========================================================= */
+
+@media (max-width: 550px) {
+
+  .logo span {
+
+    display:
+      none;
+  }
+
+
+  .logo h2 {
+
+    font-size:
+      17px;
+  }
+
+
+  .hero h1 {
+
+    font-size:
+      42px;
+
+    letter-spacing:
+      -2px;
+  }
+
+
+  .hero-buttons {
+
+    flex-direction:
+      column;
+
+    align-items:
+      center;
+  }
+
+
+  .primary-button,
+  .secondary-button {
+
+    width:
+      215px;
+  }
+
+
+  .hero-visual {
+
+    transform:
+      scale(0.65);
+
+    margin-top:
+      -60px;
+
+    margin-bottom:
+      -90px;
+  }
+
+
+  .features-preview {
+
+    grid-template-columns:
+      1fr;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE — 400PX
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .hero h1 {
+
+    font-size:
+      37px;
+  }
+
+
+  .hero-visual {
+
+    transform:
+      scale(0.56);
+
+    margin-top:
+      -90px;
+
+    margin-bottom:
+      -120px;
+  }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+button:focus-visible,
+a:focus-visible {
+
+  outline:
+    3px solid
+    var(--mustard);
+
+  outline-offset:
+    3px;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+
+    animation:
+      none !important;
+
+    transition:
+      none !important;
+  }
+}
